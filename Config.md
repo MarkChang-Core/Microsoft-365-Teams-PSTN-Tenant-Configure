@@ -78,3 +78,7 @@
   ```Get-CsOnlineUser -id user@yoursubdomain.com.tw | fl UserPrincipalName, EnterpriseVoiceEnabled, OnPremLineURI, DialPlan, VoicePolicy, HostedVoiceMail, OnlineVoiceRoutingPolicy, TeamsCallingPolicy, TeamsInteropPolicy, AssignedPlan, TeamsUpgradeEffectiveMode```
   
     ![GITHUB](image/image11.jpg "PowerShell Session Import")<br>
+  
+     此外，您也可以登入您的Teams管理中心確認使用者的配置狀況 - 
+  
+    ![GITHUB](image/image12.jpg "PowerShell Session Import")<br>
