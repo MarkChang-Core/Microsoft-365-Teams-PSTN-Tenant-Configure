@@ -12,7 +12,14 @@
 
   - **Step3. 載入PowerShell Session**<br>
   ```Import-PSSession $sfbSession -allowclobber```<br>
+   
+   ![GITHUB](image/image2.jpg "PowerShell Session Import")<br>
   
   - **Step4. 新增PSTN Gateway**<br>
   ```New-CsOnlinePSTNGateway -Identity ***yourdomain.com.tw*** -Enabled $true -SipSignalingPort 5109 -ForwardCallHistory $true```<br>
   請將yourdomain.com.tw，更換為TeleProvider提供的Sub-domain<br>
+  
+  - **Step4. 驗證SBC是否已存在於匹配清單之中**<br>
+  ```Get-CsOnlinePSTNGateway -Identity yourdomain.com.tw```
+ 
+  
