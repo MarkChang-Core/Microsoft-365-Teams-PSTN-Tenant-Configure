@@ -63,7 +63,18 @@
   
     ![GITHUB](image/image10.jpg "PowerShell Session Import")<br>       
 
-  - **Step13. 驗證新的語音路由**<br>
-  ```Get-CsOnlineVoiceRoute -Identity "Unrestricted"```
+  - **Step13. 為使用者配置電話號碼與啟用企業語音信箱套件**<br>
+  ```Set-CsUser -id user@yoursubdomain.com.tw -EnterpriseVoiceEnabled $true -HostedVoiceMail $true -OnPremLineURI tel:+88601234567890```
   
-    ![GITHUB](image/image9.jpg "PowerShell Session Import")<br>    
+    請將yoursubdomain.com.tw，更換為TeleProvider提供的Sub-domain<br>
+    
+    請將tel:+88601234567890，更換為TeleProvider提供的電話號碼<br>
+  
+  - **Step14. 為使用者分配語音路由原則**<br>
+  ```Grant-CsOnlineVoiceRoutingPolicy -Identity user@yoursubdomain.com.tw -PolicyName "Unrestricted"```
+  
+    
+  - **Step15. 驗證使用者的配置**<br>
+  ```Get-CsOnlineUser -id user@yoursubdomain.com.tw | fl UserPrincipalName, EnterpriseVoiceEnabled, OnPremLineURI, DialPlan, VoicePolicy, HostedVoiceMail, OnlineVoiceRoutingPolicy, TeamsCallingPolicy, TeamsInteropPolicy, AssignedPlan, TeamsUpgradeEffectiveMode```
+  
+    ![GITHUB](image/image11.jpg "PowerShell Session Import")<br>
