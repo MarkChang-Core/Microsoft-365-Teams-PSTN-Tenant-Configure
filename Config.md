@@ -55,4 +55,15 @@
   
     ![GITHUB](image/image9.jpg "PowerShell Session Import")<br>    
   
-    
+  - **Step12. 為使用者更新Teams原則**<br>
+  ```Grant-CsTeamsUpgradePolicy -PolicyName UpgradeToTeams -Identity user@yoursubdomain.com.tw```
+  
+    注意，擁有此原則的用戶未來將僅能使用Teams(Teams-Only)。除了加入Skype for Business會議外，他們將不再能夠使用Skype for Business用戶端。 
+    有關詳細信息，請參見：http://aka.ms/UpgradeToTeams
+  
+    ![GITHUB](image/image10.jpg "PowerShell Session Import")<br>       
+
+  - **Step13. 驗證新的語音路由**<br>
+  ```Get-CsOnlineVoiceRoute -Identity "Unrestricted"```
+  
+    ![GITHUB](image/image9.jpg "PowerShell Session Import")<br>    
