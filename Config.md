@@ -1,4 +1,4 @@
-# **使用PowerShell登入Teams**
+# **Create a trunk and provision users**
 
   - **Step1. 載入Teams Module**<br>
   ```Import-Module MicrosoftTeams```<br>
@@ -24,4 +24,11 @@
   ```Get-CsOnlinePSTNGateway -Identity yourdomain.com.tw```
  
     ![GITHUB](image/image4.jpg "PowerShell Session Import")<br>
+  
+  - **Step6. 增加新的Usage**<br>
+  ```Set-CsOnlinePstnUsage -Identity Global -Usage @{Add="Unrestricted"}```
+ 
+  - **Step7. 驗證新的Usage**<br>
+  ```Get-CsOnlinePstnUsage -Identity Global```
+  
   
