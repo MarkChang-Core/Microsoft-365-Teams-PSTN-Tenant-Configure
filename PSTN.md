@@ -13,7 +13,9 @@
 
   - **Step2. 登入Microsoft 365 (Global Admin)**<br>
   ```$sfbSession = New-CsOnlineSession```<br>
-
+  
+     輸入指令後，請於顯示視窗中，登入Microsoft具備對應管理權限之管理員帳號、密碼<br>
+  
     ![GITHUB](image/image1.jpg "Connect Microsoft 365")<br>
 
   - **Step3. 載入PowerShell Session**<br>
