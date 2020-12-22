@@ -1,3 +1,10 @@
+# 必要條件:
+
+- 使用者必須配置「Microsoft 365 Phone System」授權
+- 操作人員必須為 全域管理員 或至少 Teams服務系統管理員
+- 必須取得由一類電信業者(Tele Provider)所配發之電話號碼，如070-12345678
+- 必須取得由電話交換機(PBX)所提供之Sub-Domain
+
 # **Create a trunk and provision users**
 
   - **Step1. 載入Teams Module**<br>
@@ -16,7 +23,7 @@
   - **Step4. 新增PSTN Gateway**<br>
   ```New-CsOnlinePSTNGateway -Identity ***yoursubdomain.com.tw*** -Enabled $true -SipSignalingPort 5109 -ForwardCallHistory $true```<br>
   
-    請將yoursubdomain.com.tw，更換為TeleProvider提供的Sub-domain<br>
+    請將yoursubdomain.com.tw，更換為TeleProvider或PBX提供的Sub-domain<br>
   
     ![GITHUB](image/image3.jpg "PowerShell Session Import")<br>
   
@@ -46,7 +53,7 @@
   - **Step10. 新增語音路由**<br>
   ```New-CsOnlineVoiceRoute -Identity "Unrestricted" -NumberPattern ".*" -OnlinePstnGatewayList yoursubdomain.com.tw -Priority 1 -OnlinePstnUsages "Unrestricted"```
   
-    請將yoursubdomain.com.tw，更換為TeleProvider提供的Sub-domain<br>
+    請將yoursubdomain.com.tw，更換為TeleProvider或PBX提供的Sub-domain<br>
   
     ![GITHUB](image/image8.jpg "PowerShell Session Import")<br>    
 
@@ -66,7 +73,7 @@
   - **Step13. 為使用者配置電話號碼與啟用企業語音信箱套件**<br>
   ```Set-CsUser -id user@yoursubdomain.com.tw -EnterpriseVoiceEnabled $true -HostedVoiceMail $true -OnPremLineURI tel:+88601234567890```
   
-    請將yoursubdomain.com.tw，更換為TeleProvider提供的Sub-domain<br>
+    請將yoursubdomain.com.tw，更換為TeleProvider或PBX提供的Sub-domain<br>
     
     請將tel:+88601234567890，更換為TeleProvider提供的電話號碼<br>
   
