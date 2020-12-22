@@ -4,9 +4,12 @@
 
 - **Step1. 載入Teams Module**<br>
 ```Import-Module MicrosoftTeams```<br>
+
 - **Step2. 登入Microsoft 365 (Global Admin)**<br>
 ```$sfbSession = New-CsOnlineSession```<br>
+
 ![GITHUB](image/image1.jpg "Connect Microsoft 365")<br>
+
 - **Step3. 載入PowerShell Sessio**<br>
 ```Import-PSSession $sfbSession -allowclobber```<br>
 
