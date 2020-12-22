@@ -2,8 +2,9 @@
 
 - 使用者必須配置「Microsoft 365 Phone System」授權
 - 操作人員必須為 全域管理員 或至少 Teams服務系統管理員
-- 必須取得由一類電信業者(Tele Provider)所配發之電話號碼，如070-12345678
-- 必須取得由電話交換機(PBX)所提供之Sub-Domain
+- 必須取得由電信商所配發之電話號碼，如070-12345678
+- 必須取得由電話交換機(PBX)供應者所提供之Sub-Domain，並完成網域驗證
+  網域驗證請參考：https://docs.microsoft.com/zh-tw/microsoftteams/direct-routing-sbc-multiple-tenants#register-a-base-domain-name-in-the-carrier-tenant
 
 # **設定會話邊界控制器與使用者配置**
 
