@@ -17,7 +17,9 @@
   ```New-CsOnlinePSTNGateway -Identity ***yourdomain.com.tw*** -Enabled $true -SipSignalingPort 5109 -ForwardCallHistory $true```<br>
   請將yourdomain.com.tw，更換為TeleProvider提供的Sub-domain<br>
   
-  - **Step4. 驗證SBC是否已存在於匹配清單之中**<br>
+    ![GITHUB](image/image3.jpg "PowerShell Session Import")<br>
+  
+  - **Step5. 驗證SBC是否已存在於匹配清單之中**<br>
   ```Get-CsOnlinePSTNGateway -Identity yourdomain.com.tw```
  
   
