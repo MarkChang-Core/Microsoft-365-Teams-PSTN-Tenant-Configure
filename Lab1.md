@@ -10,6 +10,10 @@
 
     ![GITHUB](image/image1.jpg "Connect Microsoft 365")<br>
 
-  - **Step3. 載入PowerShell Sessio**<br>
+  - **Step3. 載入PowerShell Session**<br>
   ```Import-PSSession $sfbSession -allowclobber```<br>
+  
+  - **Step4. 新增PSTN Gateway**<br>  
+  請將yourdomain.com.tw，更換為TeleProvider提供的Sub-domain<br>
+  ```New-CsOnlinePSTNGateway -Identity ***yourdomain.com.tw*** -Enabled $true -SipSignalingPort 5109 -ForwardCallHistory $true```
 
