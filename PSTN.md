@@ -5,7 +5,7 @@
 - 必須取得由一類電信業者(Tele Provider)所配發之電話號碼，如070-12345678
 - 必須取得由電話交換機(PBX)所提供之Sub-Domain
 
-# **Create a trunk and provision users**
+# **設定會話邊界控制器與使用者配置**
 
   - **Step1. 載入Teams Module**<br>
   ```Import-Module MicrosoftTeams```<br>
