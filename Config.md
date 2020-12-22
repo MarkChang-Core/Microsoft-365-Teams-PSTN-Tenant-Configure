@@ -14,9 +14,9 @@
     ![GITHUB](image/image2.jpg "PowerShell Session Import")<br>
   
   - **Step4. 新增PSTN Gateway**<br>
-  ```New-CsOnlinePSTNGateway -Identity ***yourdomain.com.tw*** -Enabled $true -SipSignalingPort 5109 -ForwardCallHistory $true```<br>
+  ```New-CsOnlinePSTNGateway -Identity ***yoursubdomain.com.tw*** -Enabled $true -SipSignalingPort 5109 -ForwardCallHistory $true```<br>
   
-    請將yourdomain.com.tw，更換為TeleProvider提供的Sub-domain<br>
+    請將yoursubdomain.com.tw，更換為TeleProvider提供的Sub-domain<br>
   
     ![GITHUB](image/image3.jpg "PowerShell Session Import")<br>
   
@@ -25,10 +25,34 @@
  
     ![GITHUB](image/image4.jpg "PowerShell Session Import")<br>
   
-  - **Step6. 增加新的Usage**<br>
+  - **Step6. 增加Usage**<br>
   ```Set-CsOnlinePstnUsage -Identity Global -Usage @{Add="Unrestricted"}```
  
-  - **Step7. 驗證新的Usage**<br>
+  - **Step7. 驗證增加後的Usage**<br>
   ```Get-CsOnlinePstnUsage -Identity Global```
   
+    ![GITHUB](image/image5.jpg "PowerShell Session Import")<br>
+
+  - **Step8. 設定語音路由規則**<br>
+  ```New-CsOnlineVoiceRoutingPolicy "Unrestricted" -OnlinePstnUsages "Unrestricted"```
   
+    ![GITHUB](image/image6.jpg "PowerShell Session Import")<br>
+
+  - **Step9. 驗證新的語音路由規則**<br>
+  ```Get-CsOnlineVoiceRoutingPolicy```
+  
+    ![GITHUB](image/image7.jpg "PowerShell Session Import")<br>
+    
+  - **Step10. 新增語音路由**<br>
+  ```New-CsOnlineVoiceRoute -Identity "Unrestricted" -NumberPattern ".*" -OnlinePstnGatewayList yoursubdomain.com.tw -Priority 1 -OnlinePstnUsages "Unrestricted"```
+  
+    請將yoursubdomain.com.tw，更換為TeleProvider提供的Sub-domain<br>
+  
+    ![GITHUB](image/image8.jpg "PowerShell Session Import")<br>    
+
+  - **Step11. 驗證新的語音路由**<br>
+  ```Get-CsOnlineVoiceRoute -Identity “Unrestricted"```
+  
+    ![GITHUB](image/image9.jpg "PowerShell Session Import")<br>    
+  
+    
